@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="12" fill="#EE4D2D"/>
+  <!-- ShopeeFood Bag with Spoon & Fork -->
+  <g fill="#FFFFFF">
+    <path d="M24 11c-3.3 0-6 2.7-6 6h12c0-3.3-2.7-6-6-6z" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <path d="M13 18h22l-2 18H15L13 18z"/>
+    <!-- Fork & Spoon cutout on bag -->
+    <circle cx="24" cy="27" r="3.5" fill="#EE4D2D"/>
+  </g>
+</svg>

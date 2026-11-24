@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="12" fill="#00B14F"/>
+  <!-- GrabFood Bowl / Fork & Spoon -->
+  <g fill="#FFFFFF">
+    <path d="M14 22c0 5.5 4.5 10 10 10s10-4.5 10-10H14z"/>
+    <rect x="18" y="34" width="12" height="3" rx="1.5"/>
+    <!-- Steam / Warmth scoops -->
+    <path d="M18 17c0-2 1.5-3.5 3-4s2 2 3 0c1 2 2.5 4 4 4" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

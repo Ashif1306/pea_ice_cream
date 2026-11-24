@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" fill="none">
+  <defs>
+    <filter id="soft-shadow-c" x="-20%" y="-10%" width="140%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="16" flood-color="#1E3A5F" flood-opacity="0.22" />
+    </filter>
+    <filter id="scoop-shadow-c" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#3e2723" flood-opacity="0.3" />
+    </filter>
+    <!-- Cup Gradients -->
+    <linearGradient id="cup-grad-c" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#F0F6FF" />
+      <stop offset="70%" stop-color="#D9E9FF" />
+      <stop offset="100%" stop-color="#B8D5FA" />
+    </linearGradient>
+    <linearGradient id="cup-rim-c" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#E1EEFF" />
+      <stop offset="100%" stop-color="#A5CBF7" />
+    </linearGradient>
+    <!-- Chocolate Ice Cream Gradients -->
+    <linearGradient id="choco-base" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#795548" />
+      <stop offset="45%" stop-color="#5D4037" />
+      <stop offset="85%" stop-color="#4E342E" />
+      <stop offset="100%" stop-color="#2D1C17" />
+    </linearGradient>
+    <linearGradient id="fudge-sauce" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3E2723" />
+      <stop offset="100%" stop-color="#1B0000" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Floor Shadow -->
+  <ellipse cx="200" cy="495" rx="140" ry="20" fill="#1E3A5F" opacity="0.2" filter="blur(8px)" />
+  <ellipse cx="200" cy="492" rx="100" ry="12" fill="#1E3A5F" opacity="0.3" filter="blur(4px)" />
+
+  <g filter="url(#soft-shadow-c)">
+    <!-- ── ICE CREAM SCOOPS (Top) ── -->
+    <g filter="url(#scoop-shadow-c)">
+      <!-- Back Scoop / Mound -->
+      <circle cx="200" cy="190" r="110" fill="url(#choco-base)" />
+
+      <!-- Top High Scoop with textured swirls -->
+      <path d="M120,180 C110,130 150,70 200,60 C250,70 290,130 280,180 C260,200 140,200 120,180 Z" fill="url(#choco-base)" />
+      
+      <!-- Choco Folds / Texture -->
+      <path d="M140,150 Q200,120 260,150 Q200,170 140,150 Z" fill="#8D6E63" opacity="0.8" />
+      <path d="M160,110 Q200,90 240,110 Q200,125 160,110 Z" fill="#A1887F" opacity="0.7" />
+      <ellipse cx="185" cy="85" rx="28" ry="16" fill="#BCAAA4" opacity="0.8" />
+
+      <!-- High gloss highlights -->
+      <path d="M160,80 C175,70 205,70 215,78 C195,80 175,90 160,80 Z" fill="#FFFFFF" opacity="0.5" />
+      <circle cx="230" cy="130" r="7" fill="#FFFFFF" opacity="0.4" />
+
+      <!-- Dark Chocolate Fudge Drips -->
+      <path d="M125,190 C135,175 155,175 165,195 C175,215 190,215 200,190 C210,170 230,170 240,195 C250,220 265,215 275,190 C285,170 290,200 290,225 C290,245 110,245 110,225 C110,200 115,205 125,190 Z" fill="url(#fudge-sauce)" />
+      <path d="M145,200 Q150,235 155,240 Q160,235 165,200 Z" fill="#1B0000" />
+      <path d="M220,195 Q225,240 232,245 Q238,240 242,195 Z" fill="#1B0000" />
+
+      <!-- Choco cookie bits / crumbles -->
+      <rect x="170" y="105" width="8" height="6" rx="2" fill="#2E1B15" />
+      <rect x="220" y="95" width="7" height="7" rx="2" fill="#2E1B15" />
+      <rect x="150" y="160" width="9" height="6" rx="2" fill="#2E1B15" />
+      <rect x="235" y="150" width="8" height="7" rx="2" fill="#2E1B15" />
+    </g>
+
+    <!-- ── CUP CONTAINER (Body) ── -->
+    <path d="M90,230 L120,470 C120,470 140,488 200,488 C260,488 280,470 280,470 L310,230 Z" fill="url(#cup-grad-c)" />
+
+    <!-- Cup Rim (Lip) -->
+    <ellipse cx="200" cy="230" rx="110" ry="16" fill="url(#cup-rim-c)" stroke="#93C5FD" stroke-width="2" />
+    <path d="M120,470 C140,488 260,488 280,470" stroke="#93C5FD" stroke-width="3" fill="none" />
+
+    <!-- Shading on Cup -->
+    <path d="M90,230 L120,470 C120,470 145,482 170,485 L145,245 C120,243 100,238 90,230 Z" fill="#1E3A5F" opacity="0.08" />
+    <path d="M310,230 L280,470 C280,470 255,482 230,485 L255,245 C280,243 300,238 310,230 Z" fill="#1E3A5F" opacity="0.12" />
+
+    <!-- ── CUP GRAPHIC BRANDING ── -->
+    <g transform="translate(0, 20)">
+      <!-- Wave Band on Cup -->
+      <path d="M98,310 Q145,290 200,310 Q255,330 302,310 L293,365 Q250,385 200,365 Q150,345 107,365 Z" fill="#3B82F6" opacity="0.9" />
+
+      <!-- Center Logo / Emblem -->
+      <circle cx="200" cy="355" r="44" fill="#FFFFFF" filter="url(#scoop-shadow-c)" />
+      
+      <!-- Brand Text inside Emblem -->
+      <text x="200" y="352" text-anchor="middle" font-family="'Fredoka', sans-serif" font-weight="bold" font-size="24" fill="#FF6B9D" letter-spacing="1">pea</text>
+      <text x="200" y="372" text-anchor="middle" font-family="'Nunito', sans-serif" font-weight="800" font-size="10" fill="#1E3A5F" letter-spacing="2">ICE CREAM</text>
+
+      <!-- Flavor Pill on Cup -->
+      <rect x="135" y="415" width="130" height="26" rx="13" fill="#1E3A5F" />
+      <text x="200" y="432" text-anchor="middle" font-family="'Nunito', sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" letter-spacing="0.5">Chocolate Fudge</text>
+    </g>
+  </g>
+</svg>

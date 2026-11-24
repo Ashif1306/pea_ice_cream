@@ -1,0 +1,288 @@
+[
+  {
+    "id": "d911992b-a0a1-49ca-b491-75e57e084eec",
+    "name": "Chocolate Chip 120 Ml",
+    "description": "Es krim cokelat dengan choco chips untuk sensasi cokelat berlapis. Lembut dan manis, dengan tekstur yang membuat setiap suapan makin seru.",
+    "flavors": [
+      "Chocolate Chip 120 Ml"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531824642-5ics30.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "397521d1-6480-4340-b1a6-e6e304d7c01f",
+    "name": "Avocado Choco 120 Ml",
+    "description": "Lembutnya rasa alpukat dipadukan dengan manis cokelat. Kombinasi creamy dengan sentuhan cokelat di setiap suapan.",
+    "flavors": [
+      "Avocado Choco 120 Ml"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531703504-6hzhxq.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "ed0021f0-5743-43ab-ba99-777ae991bb83",
+    "name": "Coffee Brown Sugar 120ML",
+    "description": "Aroma kopi berpadu dengan manis khas gula merah dalam es krim yang lembut. Cocok untuk menikmati sensasi kopi dalam versi dingin.",
+    "flavors": [
+      "Coffee Brown Sugar 120ML"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531626879-oj6ckq.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "df9ee200-8d52-46b6-afc2-171a7278c11a",
+    "name": "Strawberry Cream Cheese 120 Ml",
+    "description": "Rasa stroberi yang manis-asam bertemu cream cheese yang lembut dan gurih. Perpaduan segar dan creamy yang bikin ingin menyendok lagi.",
+    "flavors": [
+      "Strawberry Cream Cheese 120 Ml"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531540069-2dn64f.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [
+      "susu",
+      "telur"
+    ],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "129e741d-7609-4e6e-915c-99af68a18c31",
+    "name": "Milky Melon",
+    "description": "Manis lembut melon berpadu dengan rasa susu yang creamy. Pilihan ringan dan menyegarkan untuk menemani harimu.",
+    "flavors": [
+      "Milky Melon"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531444231-edwo1v.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [
+      "susu",
+      "telur"
+    ],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "17d7a81f-eeda-44ff-b1d1-2e9089f01d2d",
+    "name": "Choco Cheese",
+    "description": "Perpaduan es krim keju yang creamy dan gurih dengan choco chips manis. Pas buat pencinta keju dan cokelat dalam satu suapan.",
+    "flavors": [
+      "Choco Cheese"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531390922-ubzqux.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "f520da29-f814-4c33-9d5d-9bd2973c2388",
+    "name": "Strawberry Milk Cup 120",
+    "description": "Strawberry milk flavour!",
+    "flavors": [
+      "Strawberry Milk Cup 120"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795531219791-3ujo1j.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  },
+  {
+    "id": "bd994f55-d405-442d-8b83-6e9663a3bdd0",
+    "name": "Strawberry milk cup 120 ml",
+    "description": "",
+    "flavors": [
+      "Strawberry milk cup 120 ml"
+    ],
+    "sizes": [
+      {
+        "size": "small",
+        "price": 18000,
+        "allowMixFlavors": true
+      }
+    ],
+    "basePrice": 18000,
+    "images": [
+      "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/general/1795530135105-lcz1a2.png"
+    ],
+    "stock": {},
+    "category": "cup",
+    "categoryName": "cup",
+    "allergens": [],
+    "isAvailable": true,
+    "isBestseller": false,
+    "isNew": false,
+    "isArchived": false,
+    "isMixEnabled": false,
+    "minFlavorCount": 1,
+    "maxFlavorCount": 2,
+    "hasFlavorSelection": false,
+    "flavorChoiceLabel": "Rasa",
+    "flavorChoiceCount": 2,
+    "allowSameFlavor": false,
+    "allowedFlavors": []
+  }
+]

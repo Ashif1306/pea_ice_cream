@@ -1,0 +1,29 @@
+[
+  {
+    "id": "app-gofood",
+    "name": "GoFood",
+    "url": "https://gofood.link/u/nv3pA",
+    "icon": "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/apps/1795492360271-qy4727.jpg",
+    "badge": "Paling Populer",
+    "description": "Pesan es krim favoritmu lewat GoFood",
+    "is_active": true
+  },
+  {
+    "id": "app-grabfood",
+    "name": "GrabFood",
+    "url": "https://r.grab.com/g/6-20261124_122459_970c44c3761f41da84cf8d4d8f8e5b36_MEXMPS-AWhwsvxbfYWaYaQC4gTm",
+    "icon": "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/apps/1795492376504-jqm18z.jpg",
+    "badge": "Banyak Promo",
+    "description": "Nikmati penawaran hemat di GrabFood",
+    "is_active": true
+  },
+  {
+    "id": "app-shopeefood",
+    "name": "ShopeeFood",
+    "url": "https://shopee.co.id/universal-link/now-food/shop/1177246?deep_and_deferred=1&shareChannel=copy_link",
+    "icon": "https://ecgdswzpkjyednnvbbav.supabase.co/storage/v1/object/public/pea-assets/apps/1795492391164-o44qtv.jpg",
+    "badge": "Gratis Ongkir",
+    "description": "Voucher diskon & ongkir di ShopeeFood",
+    "is_active": true
+  }
+]

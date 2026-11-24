@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F7FF"/>
+      <stop offset="100%" stop-color="#E1EEFD"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B9D"/>
+      <stop offset="100%" stop-color="#FF4081"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#1E3A5F" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" rx="36" fill="url(#bgGrad3)"/>
+
+  <!-- Confetti / Party Sparkles -->
+  <circle cx="130" cy="110" r="12" fill="#FFD700"/>
+  <circle cx="700" cy="120" r="16" fill="#FF6B9D"/>
+  <circle cx="680" cy="460" r="14" fill="#4CAF50"/>
+  <circle cx="110" cy="480" r="15" fill="#FFB3D1"/>
+  <polygon points="620,80 626,96 642,96 628,106 634,122 620,112 606,122 612,106 598,96 614,96" fill="#FFD700" opacity="0.6"/>
+  <polygon points="160,200 164,212 176,212 166,220 170,232 160,224 150,232 154,220 144,212 156,212" fill="#FF6B9D" opacity="0.6"/>
+
+  <!-- Party Sharing Box & Scoops -->
+  <g filter="url(#boxShadow)" transform="translate(150, 80)">
+    <!-- Insulated Cooler / Party Box Base -->
+    <rect x="70" y="180" width="360" height="230" rx="28" fill="url(#boxGrad)" stroke="#E2E8F0" stroke-width="4"/>
+    
+    <!-- Decorative Ribbon -->
+    <rect x="235" y="180" width="30" height="230" fill="url(#ribbonGrad)"/>
+    <rect x="70" y="270" width="360" height="28" fill="url(#ribbonGrad)"/>
+    
+    <!-- Ribbon Bow Knot -->
+    <circle cx="250" cy="284" r="18" fill="#FF4081"/>
+    <ellipse cx="225" cy="270" rx="22" ry="14" fill="#FF8EB3" transform="rotate(-30 225 270)"/>
+    <ellipse cx="275" cy="270" rx="22" ry="14" fill="#FF8EB3" transform="rotate(30 275 270)"/>
+
+    <!-- 4 Tubs / Cups inside Party Pack -->
+    <!-- Cup 1: Strawberry -->
+    <g transform="translate(85, 90)">
+      <polygon points="25,100 85,100 80,170 30,170" fill="#FFFFFF" stroke="#FF6B9D" stroke-width="2"/>
+      <circle cx="55" cy="75" r="32" fill="#FF6B9D"/>
+      <circle cx="55" cy="50" r="8" fill="#D32F2F"/>
+    </g>
+
+    <!-- Cup 2: Vanilla Cream -->
+    <g transform="translate(170, 75)">
+      <polygon points="25,100 85,100 80,170 30,170" fill="#FFFFFF" stroke="#FFD700" stroke-width="2"/>
+      <circle cx="55" cy="75" r="32" fill="#FFEFA6"/>
+      <rect x="65" y="45" width="6" height="40" rx="2" fill="#E2A855" transform="rotate(20 65 45)"/>
+    </g>
+
+    <!-- Cup 3: Chocolate Fudge -->
+    <g transform="translate(255, 75)">
+      <polygon points="25,100 85,100 80,170 30,170" fill="#FFFFFF" stroke="#8D5B4C" stroke-width="2"/>
+      <circle cx="55" cy="75" r="32" fill="#5A3427"/>
+      <circle cx="55" cy="50" r="8" fill="#FFD700"/>
+    </g>
+
+    <!-- Cup 4: Mint Green -->
+    <g transform="translate(340, 90)">
+      <polygon points="25,100 85,100 80,170 30,170" fill="#FFFFFF" stroke="#4CAF50" stroke-width="2"/>
+      <circle cx="55" cy="75" r="32" fill="#4CAF50"/>
+      <circle cx="55" cy="50" r="8" fill="#FF6B9D"/>
+    </g>
+
+    <!-- Front Badge -->
+    <rect x="150" y="340" width="200" height="44" rx="22" fill="#1E3A5F"/>
+    <text x="250" y="368" font-family="'Fredoka', sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">PAKET BERBAGI PEA</text>
+  </g>
+</svg>

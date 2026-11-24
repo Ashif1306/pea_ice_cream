@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="100%" stop-color="#FFE4ED"/>
+    </linearGradient>
+    <linearGradient id="pinkScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8EB3"/>
+      <stop offset="100%" stop-color="#FF6B9D"/>
+    </linearGradient>
+    <linearGradient id="creamScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF0"/>
+      <stop offset="100%" stop-color="#FFEFA6"/>
+    </linearGradient>
+    <linearGradient id="coneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAD089"/>
+      <stop offset="100%" stop-color="#E2A855"/>
+    </linearGradient>
+    <linearGradient id="cupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F0F4F8"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#FF6B9D" flood-opacity="0.18"/>
+    </filter>
+    <filter id="cupShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#1E3A5F" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="800" height="600" rx="36" fill="url(#bgGrad1)"/>
+
+  <!-- Decorative Bubbles/Dots -->
+  <circle cx="140" cy="120" r="45" fill="#FFB3D1" opacity="0.35"/>
+  <circle cx="680" cy="100" r="60" fill="#FFD700" opacity="0.25"/>
+  <circle cx="700" cy="480" r="40" fill="#4CAF50" opacity="0.2"/>
+  <circle cx="100" cy="460" r="30" fill="#FF6B9D" opacity="0.25"/>
+
+  <!-- Central Display Group with Soft Shadow -->
+  <g filter="url(#cupShadow)" transform="translate(180, 70)">
+    <!-- Waffle Cone (Angled on Right) -->
+    <g transform="translate(250, 150) rotate(18)">
+      <!-- Cone Body -->
+      <polygon points="50,120 110,120 80,310" fill="url(#coneGrad)"/>
+      <!-- Waffle Grid Lines -->
+      <path d="M55,140 L105,140 M60,170 L100,170 M66,200 L94,200 M72,235 L88,235 M60,130 L95,240 M100,130 L65,240" stroke="#C98B36" stroke-width="2.5" opacity="0.5"/>
+      <!-- Cone Scoop (Golden Vanilla) -->
+      <circle cx="80" cy="95" r="55" fill="url(#creamScoop)"/>
+      <ellipse cx="80" cy="120" rx="60" ry="14" fill="#FFEAA0"/>
+      <!-- Dripping Glaze -->
+      <path d="M40,115 Q55,140 70,120 Q85,145 100,120 Q115,135 125,115" fill="#FF8EB3" opacity="0.9"/>
+    </g>
+
+    <!-- Main Artisan Cup (Foreground Center-Left) -->
+    <g transform="translate(20, 80)">
+      <!-- Cup Base -->
+      <polygon points="60,190 220,190 200,340 80,340" fill="url(#cupGrad)" stroke="#FFB3D1" stroke-width="4"/>
+      <!-- Cup Brand Ribbon -->
+      <polygon points="67,240 213,240 208,280 72,280" fill="#FF6B9D"/>
+      <text x="140" y="266" font-family="'Fredoka', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">PEA ICE CREAM</text>
+
+      <!-- Bottom Scoop (Vanilla Cream) -->
+      <circle cx="110" cy="150" r="56" fill="url(#creamScoop)"/>
+      <!-- Bottom Scoop (Mint Green touch) -->
+      <circle cx="170" cy="150" r="52" fill="#E2F7E4"/>
+      <!-- Top Giant Scoop (Signature Classic Strawberry Pink) -->
+      <circle cx="140" cy="95" r="70" fill="url(#pinkScoop)"/>
+      <!-- Ruffle / Scoop Edge -->
+      <path d="M72,110 Q90,140 110,120 Q140,145 170,120 Q195,140 210,110" fill="#FF6B9D"/>
+
+      <!-- Cherry on Top -->
+      <circle cx="140" cy="22" r="16" fill="#D32F2F"/>
+      <circle cx="136" cy="18" r="4" fill="#FFCDD2"/>
+      <path d="M142,20 C146,5 158,-5 168,-2" stroke="#5D4037" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Sprinkles -->
+      <rect x="110" y="70" width="12" height="4" rx="2" fill="#FFD700" transform="rotate(25 110 70)"/>
+      <rect x="155" y="65" width="12" height="4" rx="2" fill="#4CAF50" transform="rotate(-30 155 65)"/>
+      <rect x="135" y="105" width="12" height="4" rx="2" fill="#FFFFFF" transform="rotate(15 135 105)"/>
+      <rect x="165" y="100" width="10" height="4" rx="2" fill="#FFD700" transform="rotate(45 165 100)"/>
+    </g>
+
+    <!-- Mini Scoop on Side Plate -->
+    <ellipse cx="370" cy="380" rx="50" ry="12" fill="#E0E6ED" opacity="0.6"/>
+    <ellipse cx="140" cy="435" rx="110" ry="16" fill="#FFB3D1" opacity="0.4"/>
+  </g>
+</svg>

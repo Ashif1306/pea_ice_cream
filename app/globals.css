@@ -1,0 +1,399 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ──────────────────────────────────────────────── */
+:root {
+  /* Font Family Variables */
+  --font-fredoka: "Fredoka", "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-nunito: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Semantic background / foreground */
+  --background: #fff9fb;
+  --foreground: #1e1e2e;
+
+  /* Brand palette (mirrors tailwind.config.ts) */
+  --brand-pink:       #FF6B9D;
+  --brand-pink-light: #FFB3D1;
+  --brand-dark-blue:  #1E3A5F;
+  --brand-yellow:     #FFD700;
+  --brand-green:      #4CAF50;
+
+  /* Gradient shortcuts */
+  --gradient-pink: linear-gradient(135deg, #FF6B9D 0%, #FFB3D1 100%);
+  --gradient-candy: linear-gradient(135deg, #FF6B9D 0%, #c084fc 50%, #FFB3D1 100%);
+  --gradient-bg: linear-gradient(160deg, #fff9fb 0%, #fff0f6 50%, #f0f4ff 100%);
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--gradient-bg);
+    background-attachment: fixed;
+    font-family: var(--font-nunito), Nunito, ui-sans-serif, system-ui, sans-serif;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-fredoka), Fredoka, ui-sans-serif, system-ui, sans-serif;
+    @apply tracking-wide;
+  }
+
+  /* Focus ring consistent with brand */
+  *:focus-visible {
+    outline: 2px solid var(--brand-pink);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fff0f6;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-pink-light);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-pink);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-pink-light) #fff0f6;
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Pink gradient text */
+  .text-gradient-pink {
+    background: var(--gradient-pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Candy gradient text */
+  .text-gradient-candy {
+    background: var(--gradient-candy);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass-morphism card */
+  .glass {
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 107, 157, 0.15);
+  }
+
+  /* Safe area padding for mobile bottom nav */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* ─── Component Styles ───────────────────────────────────────────────────── */
+@layer components {
+  /* Bottom nav padding helper — add to page wrappers */
+  .page-with-bottom-nav {
+    @apply pb-20 md:pb-0;
+  }
+
+  /* Section container */
+  .container-brand {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* ─── Hero Carousel Animations ───────────────────────────────────────────── */
+
+/* Fade-in with upward slide for hero text elements */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Product scale-in from smaller size */
+@keyframes heroProductMain {
+  from {
+    opacity: 0;
+    transform: translate(-60%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-60%, -50%) scale(1);
+  }
+}
+
+@keyframes heroProductSecondary {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes heroProductTertiary {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(40px);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.hero-fade-in {
+  animation: heroFadeIn 0.6s ease-out both;
+}
+
+.hero-fade-in-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.hero-fade-in-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.hero-fade-in-delay-3 {
+  animation-delay: 0.3s;
+}
+
+.hero-product-main {
+  animation: heroProductMain 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-product-secondary {
+  animation: heroProductSecondary 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.hero-product-tertiary {
+  animation: heroProductTertiary 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+
+/* ─── 3D Object Motion Carousel Keyframes (Inspired by Reference) ────────── */
+
+/* Product A: Drops down past the bottom threshold of the hero stage with slight rotation and fading */
+@keyframes productDropExit {
+  0% {
+    transform: translate(-50%, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, 220px) scale(0.92) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+/* Product B: Moves to main spot and scales up */
+@keyframes productEnterMain {
+  0% {
+    transform: translate(60px, -20px) scale(0.65);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Product C: Moves from tertiary to secondary spot */
+@keyframes productEnterSecondary {
+  0% {
+    transform: translate(80px, -10px) scale(0.7);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.85;
+  }
+}
+
+/* Product D: Enters from off-right */
+@keyframes productEnterTertiary {
+  0% {
+    transform: translate(120px, 0) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.product-drop-exit {
+  animation: productDropExit 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ─── Continuous Physical Carousel Cup Track Classes ───────────────────────── */
+
+.carousel-cup {
+  position: absolute;
+  will-change: transform, left, bottom, opacity;
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+              left 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+              bottom 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+              filter 1200ms ease;
+}
+
+.carousel-cup-instant {
+  transition: none !important;
+}
+
+.cup-slot-main {
+  left: 36%;
+  bottom: 4%;
+  transform: translate(-50%, 0) scale(1);
+  opacity: 1;
+  z-index: 18;
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.25));
+}
+
+.cup-slot-secondary {
+  left: 72%;
+  bottom: 14%;
+  transform: translate(-50%, 0) scale(0.62);
+  opacity: 0.85;
+  z-index: 14;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.18));
+}
+
+.cup-slot-tertiary {
+  left: 95%;
+  bottom: 19%;
+  transform: translate(-50%, 0) scale(0.42);
+  opacity: 0.60;
+  z-index: 10;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+}
+
+.cup-slot-offscreen {
+  left: 118%;
+  bottom: 22%;
+  transform: translate(-50%, 0) scale(0.30);
+  opacity: 0;
+  z-index: 5;
+  filter: none;
+}
+
+.cup-slot-exited {
+  left: 36%;
+  bottom: 4%;
+  transform: translate(-50%, 270px) rotate(14deg) scale(0.90);
+  opacity: 0;
+  z-index: 16;
+  filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.2));
+  transition: transform 1200ms cubic-bezier(0.38, 0, 0.24, 1),
+              opacity 1100ms cubic-bezier(0.38, 0, 0.24, 1) !important;
+}
+
+/* ─── Reduced Motion: Only disable smooth auto-scroll, preserve brand hero motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-btn-primary,
+  .hero-btn-secondary,
+  .btn-shimmer-sweep {
+    animation: none !important;
+  }
+}
+
+/* ─── Hero Action Buttons Animations ─────────────────────────────────────── */
+
+@keyframes btnPulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(30, 58, 95, 0.30), 0 0 0 0 rgba(255, 215, 0, 0.40);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.45), 0 0 0 5px rgba(255, 215, 0, 0);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes btnShimmerPass {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  28%, 100% {
+    transform: translateX(280%) skewX(-25deg);
+  }
+}
+
+@keyframes btnFloatSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+.hero-btn-primary {
+  animation: btnPulseGlow 3.5s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-primary:hover {
+  animation-play-state: paused;
+}
+
+.hero-btn-secondary {
+  animation: btnFloatSubtle 3.8s ease-in-out infinite 0.6s;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-secondary:hover {
+  animation-play-state: paused;
+}
+
+.btn-shimmer-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.38) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  animation: btnShimmerPass 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}

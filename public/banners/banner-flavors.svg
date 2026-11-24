@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF0"/>
+      <stop offset="100%" stop-color="#FFF4D4"/>
+    </linearGradient>
+    <linearGradient id="chocoScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8D5B4C"/>
+      <stop offset="100%" stop-color="#5A3427"/>
+    </linearGradient>
+    <linearGradient id="matchaScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#88D49E"/>
+      <stop offset="100%" stop-color="#4CAF50"/>
+    </linearGradient>
+    <linearGradient id="mangoScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FFAA00"/>
+    </linearGradient>
+    <linearGradient id="berryScoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8EB3"/>
+      <stop offset="100%" stop-color="#FF6B9D"/>
+    </linearGradient>
+    <linearGradient id="tupGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F5F5FA"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#1E3A5F" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" rx="36" fill="url(#bgGrad2)"/>
+
+  <!-- Background Circles -->
+  <circle cx="680" cy="140" r="70" fill="#FFB3D1" opacity="0.3"/>
+  <circle cx="120" cy="120" r="50" fill="#4CAF50" opacity="0.15"/>
+  <circle cx="720" cy="460" r="50" fill="#FFD700" opacity="0.3"/>
+
+  <!-- Trio Cups Group -->
+  <g filter="url(#shadow2)" transform="translate(130, 90)">
+    <!-- Left Cup: Matcha & Vanilla -->
+    <g transform="translate(20, 60)">
+      <polygon points="40,160 160,160 145,280 55,280" fill="url(#tupGrad)" stroke="#4CAF50" stroke-width="3"/>
+      <polygon points="45,200 155,200 150,230 50,230" fill="#4CAF50"/>
+      <text x="100" y="221" font-family="'Fredoka', sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MATCHA</text>
+      <!-- Scoop -->
+      <circle cx="100" cy="120" r="52" fill="url(#matchaScoop)"/>
+      <path d="M52,130 Q75,155 100,135 Q125,155 148,130" fill="#4CAF50"/>
+      <!-- Mint leaf -->
+      <path d="M100,65 C120,50 125,75 105,75 Z" fill="#2E7D32"/>
+    </g>
+
+    <!-- Right Cup: Rich Chocolate Fudge -->
+    <g transform="translate(340, 60)">
+      <polygon points="40,160 160,160 145,280 55,280" fill="url(#tupGrad)" stroke="#8D5B4C" stroke-width="3"/>
+      <polygon points="45,200 155,200 150,230 50,230" fill="#5A3427"/>
+      <text x="100" y="221" font-family="'Fredoka', sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">CHOCO</text>
+      <!-- Scoop -->
+      <circle cx="100" cy="120" r="52" fill="url(#chocoScoop)"/>
+      <path d="M52,130 Q75,155 100,135 Q125,155 148,130" fill="#5A3427"/>
+      <!-- Chocolate stick -->
+      <rect x="120" y="55" width="10" height="70" rx="4" fill="#3E2723" transform="rotate(25 120 55)"/>
+    </g>
+
+    <!-- Center Cup (Larger / Foreground): Mango Swirl & Berry Pink -->
+    <g transform="translate(170, 20)">
+      <polygon points="35,190 185,190 170,340 50,340" fill="url(#tupGrad)" stroke="#FF6B9D" stroke-width="4"/>
+      <polygon points="42,240 178,240 174,275 46,275" fill="#FF6B9D"/>
+      <text x="110" y="265" font-family="'Fredoka', sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">MIX FLAVORS</text>
+      
+      <!-- Double Scoops -->
+      <circle cx="85" cy="140" r="55" fill="url(#mangoScoop)"/>
+      <circle cx="135" cy="135" r="55" fill="url(#berryScoop)"/>
+      <circle cx="110" cy="95" r="50" fill="url(#berryScoop)"/>
+      
+      <!-- Wave drizzle -->
+      <path d="M60,140 Q85,165 110,145 Q135,165 160,140" fill="#FFAA00"/>
+      <!-- Wafer stick -->
+      <rect x="145" y="40" width="12" height="85" rx="5" fill="#E2A855" transform="rotate(22 145 40)"/>
+      <circle cx="110" cy="45" r="14" fill="#D32F2F"/>
+    </g>
+  </g>
+</svg>

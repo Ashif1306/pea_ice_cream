@@ -1,0 +1,46 @@
+[
+  {
+    "id": "3b9daa3f-4a21-4cdf-9d65-a127fb13da34",
+    "name": "Cone",
+    "slug": "cone",
+    "description": "Es krim cone dengan pilihan porsi single dan double.",
+    "orderIdx": 1,
+    "isActive": true,
+    "productCount": 0,
+    "createdAt": "2026-11-24T14:02:06.800Z",
+    "updatedAt": "2026-11-24T14:02:06.800Z"
+  },
+  {
+    "id": "696fbbcc-f91d-4a51-bbcd-d7da751f9fad",
+    "name": "Cup",
+    "slug": "cup",
+    "description": "Pilihan Single Cup, Double Cup, dan kemasan Cup 120 ml.",
+    "orderIdx": 2,
+    "isActive": true,
+    "productCount": 8,
+    "createdAt": "2026-11-24T14:02:34.581Z",
+    "updatedAt": "2026-11-24T14:02:34.581Z"
+  },
+  {
+    "id": "8b52025a-2337-44f5-a868-fe806e9bea7f",
+    "name": "Es Roti",
+    "slug": "es-roti",
+    "description": "Es krim dengan roti dan pilihan rasa.",
+    "orderIdx": 3,
+    "isActive": true,
+    "productCount": 0,
+    "createdAt": "2026-11-24T14:03:03.485Z",
+    "updatedAt": "2026-11-24T14:03:03.485Z"
+  },
+  {
+    "id": "759d742e-aec9-41e2-a2bd-e5299f53f156",
+    "name": "Gabin",
+    "slug": "gabin",
+    "description": "Gabin ice cream dengan berbagai pilihan rasa.",
+    "orderIdx": 4,
+    "isActive": true,
+    "productCount": 0,
+    "createdAt": "2026-11-24T14:03:26.250Z",
+    "updatedAt": "2026-11-24T14:03:26.250Z"
+  }
+]

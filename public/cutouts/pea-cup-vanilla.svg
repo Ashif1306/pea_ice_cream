@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520" fill="none">
+  <defs>
+    <filter id="soft-shadow-v" x="-20%" y="-10%" width="140%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="24" stdDeviation="16" flood-color="#1E3A5F" flood-opacity="0.22" />
+    </filter>
+    <filter id="scoop-shadow-v" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#b8860b" flood-opacity="0.25" />
+    </filter>
+    <!-- Cup Gradients -->
+    <linearGradient id="cup-grad-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#FFFDF0" />
+      <stop offset="70%" stop-color="#FFF8D6" />
+      <stop offset="100%" stop-color="#FCEAB3" />
+    </linearGradient>
+    <linearGradient id="cup-rim-v" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#FFF9DE" />
+      <stop offset="100%" stop-color="#F9E29C" />
+    </linearGradient>
+    <!-- Vanilla Ice Cream Gradients -->
+    <linearGradient id="vanilla-base" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#FFFBF0" />
+      <stop offset="70%" stop-color="#FDF3CE" />
+      <stop offset="100%" stop-color="#F5E4A3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ambient Floor Shadow -->
+  <ellipse cx="200" cy="495" rx="140" ry="20" fill="#1E3A5F" opacity="0.2" filter="blur(8px)" />
+  <ellipse cx="200" cy="492" rx="100" ry="12" fill="#1E3A5F" opacity="0.3" filter="blur(4px)" />
+
+  <g filter="url(#soft-shadow-v)">
+    <!-- ── ICE CREAM SCOOPS (Top) ── -->
+    <g filter="url(#scoop-shadow-v)">
+      <!-- Back Scoop / Mound -->
+      <circle cx="200" cy="190" r="110" fill="url(#vanilla-base)" />
+
+      <!-- Top High Scoop with textured swirls -->
+      <path d="M120,180 C110,130 150,70 200,60 C250,70 290,130 280,180 C260,200 140,200 120,180 Z" fill="url(#vanilla-base)" />
+      
+      <!-- Vanilla Specks (Madagascar vanilla seeds) -->
+      <circle cx="160" cy="120" r="1.5" fill="#5D4037" opacity="0.7" />
+      <circle cx="190" cy="100" r="1.5" fill="#5D4037" opacity="0.6" />
+      <circle cx="220" cy="115" r="1.2" fill="#5D4037" opacity="0.8" />
+      <circle cx="175" cy="155" r="1.5" fill="#5D4037" opacity="0.7" />
+      <circle cx="240" cy="160" r="1.5" fill="#5D4037" opacity="0.6" />
+      <circle cx="205" cy="140" r="1.2" fill="#5D4037" opacity="0.8" />
+
+      <!-- Organic soft ripples/folds in scoop -->
+      <path d="M140,150 Q200,120 260,150 Q200,170 140,150 Z" fill="#FFFBEA" opacity="0.9" />
+      <path d="M160,110 Q200,90 240,110 Q200,125 160,110 Z" fill="#FFFDF5" opacity="0.9" />
+      <ellipse cx="185" cy="85" rx="28" ry="16" fill="#FFFFFF" opacity="0.95" />
+
+      <!-- High gloss highlights -->
+      <path d="M160,80 C175,70 205,70 215,78 C195,80 175,90 160,80 Z" fill="#FFFFFF" />
+      <circle cx="230" cy="130" r="7" fill="#FFFFFF" opacity="0.8" />
+
+      <!-- Caramel Swirl Accents -->
+      <path d="M130,195 Q170,165 210,190 Q250,215 270,195" stroke="#D97706" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.8" />
+      <path d="M160,135 Q200,115 240,135" stroke="#D97706" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7" />
+    </g>
+
+    <!-- ── CUP CONTAINER (Body) ── -->
+    <path d="M90,230 L120,470 C120,470 140,488 200,488 C260,488 280,470 280,470 L310,230 Z" fill="url(#cup-grad-v)" />
+
+    <!-- Cup Rim (Lip) -->
+    <ellipse cx="200" cy="230" rx="110" ry="16" fill="url(#cup-rim-v)" stroke="#F5C842" stroke-width="2" />
+    <path d="M120,470 C140,488 260,488 280,470" stroke="#F5C842" stroke-width="3" fill="none" />
+
+    <!-- Shading on Cup -->
+    <path d="M90,230 L120,470 C120,470 145,482 170,485 L145,245 C120,243 100,238 90,230 Z" fill="#1E3A5F" opacity="0.05" />
+    <path d="M310,230 L280,470 C280,470 255,482 230,485 L255,245 C280,243 300,238 310,230 Z" fill="#D97706" opacity="0.12" />
+
+    <!-- ── CUP GRAPHIC BRANDING ── -->
+    <g transform="translate(0, 20)">
+      <!-- Wave Band on Cup -->
+      <path d="M98,310 Q145,290 200,310 Q255,330 302,310 L293,365 Q250,385 200,365 Q150,345 107,365 Z" fill="#F59E0B" opacity="0.9" />
+
+      <!-- Center Logo / Emblem -->
+      <circle cx="200" cy="355" r="44" fill="#FFFFFF" filter="url(#scoop-shadow-v)" />
+      
+      <!-- Brand Text inside Emblem -->
+      <text x="200" y="352" text-anchor="middle" font-family="'Fredoka', sans-serif" font-weight="bold" font-size="24" fill="#FF6B9D" letter-spacing="1">pea</text>
+      <text x="200" y="372" text-anchor="middle" font-family="'Nunito', sans-serif" font-weight="800" font-size="10" fill="#1E3A5F" letter-spacing="2">ICE CREAM</text>
+
+      <!-- Flavor Pill on Cup -->
+      <rect x="135" y="415" width="130" height="26" rx="13" fill="#1E3A5F" />
+      <text x="200" y="432" text-anchor="middle" font-family="'Nunito', sans-serif" font-weight="700" font-size="11" fill="#FFFFFF" letter-spacing="0.5">Vanilla Dream</text>
+    </g>
+  </g>
+</svg>
