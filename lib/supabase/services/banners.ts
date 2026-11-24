@@ -25,6 +25,21 @@ export async function fetchActiveBanners(): Promise<BannerSlide[]> {
     return getStoredBanners().filter((b) => b.isActive);
   }
 
+  if (typeof window === "undefined") {
+    try {
+      const fs = await import("fs");
+      const path = await import("path");
+      const file = path.default.join(process.cwd(), "data", "banners.json");
+      if (fs.existsSync(file)) {
+        const raw = fs.readFileSync(file, "utf-8");
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          return list.filter((b: any) => b.isActive);
+        }
+      }
+    } catch {}
+  }
+
   const supabase = createClient();
   if (!supabase) {
     return INITIAL_BANNERS;

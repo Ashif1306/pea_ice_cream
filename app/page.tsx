@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { fetchCatalogProducts } from "@/lib/supabase/services/products";
+import { fetchActiveBanners } from "@/lib/supabase/services/banners";
 import { HeroCarousel } from "@/components/home/hero-carousel";
 import { OutletsSection } from "@/components/home/outlets-section";
 import { PartnerAppsSection } from "@/components/home/partner-apps-section";
@@ -14,14 +15,19 @@ import {
   ExternalLink,
 } from "lucide-react";
 
+export const revalidate = 0;
+
 export default async function HomePage() {
-  const products = await fetchCatalogProducts();
+  const [products, banners] = await Promise.all([
+    fetchCatalogProducts(),
+    fetchActiveBanners(),
+  ]);
   const featuredProducts = products.slice(0, 4);
 
   return (
     <div className="flex flex-col overflow-x-hidden">
       {/* ─── Hero Carousel ───────────────────────────────────────────── */}
-      <HeroCarousel />
+      <HeroCarousel initialBanners={banners} />
 
       {/* ─── Menu Pilihan (Featured Products) ────────────────────────── */}
       <section className="container-brand py-12 sm:py-16">

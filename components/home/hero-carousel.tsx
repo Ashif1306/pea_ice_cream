@@ -86,8 +86,14 @@ function getTheme(themeName?: string): ThemeConfig {
 
 // ─── Main Hero Component ─────────────────────────────────────────────────────
 
-export function HeroCarousel() {
-  const [banners, setBanners] = useState<BannerSlide[]>(INITIAL_BANNERS);
+interface HeroCarouselProps {
+  initialBanners?: BannerSlide[];
+}
+
+export function HeroCarousel({ initialBanners }: HeroCarouselProps = {}) {
+  const [banners, setBanners] = useState<BannerSlide[]>(
+    initialBanners && initialBanners.length > 0 ? initialBanners : INITIAL_BANNERS
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Settings from Admin

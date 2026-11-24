@@ -123,13 +123,7 @@ export async function GET(request: NextRequest) {
 
     if (supabase) {
       try {
-        // 1. Purge seed products from Supabase
-        await supabase.from("inventory").delete().in("product_id", SEED_PRODUCT_IDS);
-        await supabase.from("product_sizes").delete().in("product_id", SEED_PRODUCT_IDS);
-        await supabase.from("product_flavors").delete().in("product_id", SEED_PRODUCT_IDS);
-        await supabase.from("products").delete().in("id", SEED_PRODUCT_IDS);
-
-        // 2. Fetch real user products from Supabase
+        // Fetch real user products from Supabase
         const { data: dbData } = await supabase
           .from("products")
           .select(`

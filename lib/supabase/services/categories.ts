@@ -60,6 +60,21 @@ export async function fetchCategories(activeOnly = false): Promise<ProductCatego
     return activeOnly ? local.filter((c) => c.isActive) : local;
   }
 
+  if (typeof window === "undefined") {
+    try {
+      const fs = await import("fs");
+      const path = await import("path");
+      const file = path.default.join(process.cwd(), "data", "categories.json");
+      if (fs.existsSync(file)) {
+        const raw = fs.readFileSync(file, "utf-8");
+        const list = JSON.parse(raw);
+        if (Array.isArray(list) && list.length > 0) {
+          return activeOnly ? list.filter((c: any) => c.isActive) : list;
+        }
+      }
+    } catch {}
+  }
+
   // Server-side fetch from Supabase
   const supabase = createClient();
   if (supabase) {
