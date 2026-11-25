@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import fs from "fs/promises";
 import path from "path";
 
@@ -53,7 +54,7 @@ export async function GET(request: NextRequest) {
 
     // 2. Try Supabase
     try {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         let query = supabase.from("flavors").select("*").order("order_idx", { ascending: true });
         if (activeOnly) {
@@ -130,7 +131,7 @@ export async function POST(request: NextRequest) {
 
     // Sync to Supabase
     try {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         await supabase.from("flavors").upsert({
           id: record.id,
@@ -185,7 +186,7 @@ export async function PATCH(request: NextRequest) {
 
     // Sync to Supabase
     try {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         const updatePayload: any = { updated_at: new Date().toISOString() };
         if (isAvailable !== undefined) updatePayload.is_available = isAvailable;

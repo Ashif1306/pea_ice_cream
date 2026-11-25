@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { BannerSlide, INITIAL_BANNERS } from "@/lib/banners-data";
 import fs from "fs";
 import path from "path";
@@ -55,7 +56,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const activeOnly = searchParams.get("activeOnly") === "true";
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       let query = supabase
         .from("banners")
@@ -123,7 +124,7 @@ export async function POST(request: NextRequest) {
       productCutout: img,
     };
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(banner.id);
       const bannerId = isUuid ? banner.id : crypto.randomUUID();
@@ -188,7 +189,7 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: "Banners array diperlukan." }, { status: 400 });
     }
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       for (const b of banners) {
         const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(b.id);
@@ -221,7 +222,7 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: "ID banner diperlukan." }, { status: 400 });
     }
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
       if (isUuid) {

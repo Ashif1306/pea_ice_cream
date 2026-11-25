@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import fs from "fs/promises";
 import path from "path";
 
@@ -126,7 +127,7 @@ export async function POST(request: NextRequest) {
 
     // Sync to Supabase
     try {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         // Delete old configs for product
         await supabase.from("product_flavor_configs").delete().eq("product_id", productId);

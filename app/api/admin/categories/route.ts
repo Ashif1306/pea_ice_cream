@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import fs from "fs";
 import path from "path";
 
@@ -54,7 +55,7 @@ export async function GET(request: NextRequest) {
     const local = getFallbackCategories();
     const fallbackMap = new Map(local.map((f: any) => [f.id, f]));
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (!supabase) {
       const filtered = activeOnly ? local.filter((c) => c.isActive) : local;
       return NextResponse.json({ success: true, categories: filtered });
@@ -126,7 +127,7 @@ export async function POST(request: NextRequest) {
       generatedSlug = `kategori-${Date.now()}`;
     }
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
 
     if (supabase) {
       // Check if updating existing category
@@ -297,7 +298,7 @@ export async function PATCH(request: NextRequest) {
       return NextResponse.json({ error: "ID kategori diperlukan." }, { status: 400 });
     }
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       const { error } = await supabase
         .from("product_categories")
@@ -332,7 +333,7 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: "ID kategori diperlukan." }, { status: 400 });
     }
 
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       // 1. Get category info
       const { data: cat } = await supabase

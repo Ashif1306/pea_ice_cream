@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import fs from "fs";
 import path from "path";
 
@@ -245,15 +246,43 @@ export async function POST(request: NextRequest) {
     writeStoredProducts(all);
 
     // 2. Sync to Supabase
-    const supabase = createClient();
+    const supabase = createAdminClient() || createClient();
     if (supabase) {
       try {
+        let categorySlug = fullProduct.category;
+
+        // Ensure category_slug is valid in Supabase table product_categories
+        const { data: catCheck } = await supabase
+          .from("product_categories")
+          .select("slug")
+          .eq("slug", categorySlug)
+          .maybeSingle();
+
+        if (!catCheck && fullProduct.categoryId) {
+          const { data: catById } = await supabase
+            .from("product_categories")
+            .select("slug")
+            .eq("id", fullProduct.categoryId)
+            .maybeSingle();
+          if (catById) categorySlug = catById.slug;
+        }
+
+        if (!catCheck && categorySlug === fullProduct.category) {
+          const { data: firstCat } = await supabase
+            .from("product_categories")
+            .select("slug")
+            .order("order_idx", { ascending: true })
+            .limit(1)
+            .maybeSingle();
+          if (firstCat) categorySlug = firstCat.slug;
+        }
+
         const safePayload: any = {
           id: prodId,
           name: fullProduct.name,
           slug: fullProduct.slug,
           description: fullProduct.description,
-          category_slug: fullProduct.category,
+          category_slug: categorySlug,
           allergens: fullProduct.allergens,
           images: fullProduct.images,
           is_available: fullProduct.isAvailable,
@@ -265,7 +294,21 @@ export async function POST(request: NextRequest) {
         };
 
         const { error: prodError } = await supabase.from("products").upsert(safePayload);
-        if (prodError) console.warn("Supabase product upsert warning:", prodError.message);
+        if (prodError) {
+          console.error("Supabase product upsert error:", prodError);
+          const isRls = prodError.code === "42501";
+          return NextResponse.json(
+            {
+              success: false,
+              error: `Gagal menyimpan produk ke database Supabase: ${prodError.message}. ${
+                isRls
+                  ? "Aturan keamanan RLS Supabase menolak operasi. Pastikan SUPABASE_SERVICE_ROLE_KEY telah dimasukkan ke Environment Variables di Vercel atau jalankan script migrasi 012 di SQL Editor Supabase."
+                  : ""
+              }`,
+            },
+            { status: 400 }
+          );
+        }
 
         // Upsert sizes
         if (Array.isArray(fullProduct.sizes)) {
@@ -279,7 +322,11 @@ export async function POST(request: NextRequest) {
           }
         }
       } catch (e: any) {
-        console.warn("Supabase sync warning in POST /api/admin/products:", e.message);
+        console.error("Supabase sync error in POST /api/admin/products:", e.message);
+        return NextResponse.json(
+          { success: false, error: `Gagal sinkronisasi Supabase: ${e.message}` },
+          { status: 500 }
+        );
       }
     }
 
@@ -308,7 +355,7 @@ export async function PATCH(request: NextRequest) {
 
     // 2. Update in Supabase if valid UUID
     if (isUuid(id)) {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         try {
           await supabase
@@ -343,7 +390,7 @@ export async function DELETE(request: NextRequest) {
 
     // 2. Soft delete in Supabase if valid UUID
     if (isUuid(id)) {
-      const supabase = createClient();
+      const supabase = createAdminClient() || createClient();
       if (supabase) {
         try {
           const { error } = await supabase

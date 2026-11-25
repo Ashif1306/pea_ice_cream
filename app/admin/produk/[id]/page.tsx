@@ -40,7 +40,7 @@ export default function AdminEditProdukPage() {
 
   // ─── 1. Form Basic State ──────────────────────────────────────────────────
   const [name, setName] = useState("");
-  const [category, setCategory] = useState("classic");
+  const [category, setCategory] = useState(isNew ? "" : "cup");
   const [categoryId, setCategoryId] = useState<string>("");
   const [categories, setCategories] = useState<ProductCategoryItem[]>([]);
   const [description, setDescription] = useState("");
@@ -76,7 +76,7 @@ export default function AdminEditProdukPage() {
     // 1. Fetch categories
     fetchCategories(false).then((cats) => {
       setCategories(cats);
-      if (cats.length > 0 && !category) {
+      if (cats.length > 0 && (isNew || !category)) {
         setCategory(cats[0].slug);
         setCategoryId(cats[0].id);
       }
